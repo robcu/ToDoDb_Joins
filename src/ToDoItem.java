@@ -13,4 +13,6 @@ public class ToDoItem {
         this.isDone = isDone;
         this.user = user;
     }
+
+    public ToDoItem() {}
 }
