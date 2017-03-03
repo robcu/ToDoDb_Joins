@@ -1,10 +1,10 @@
 import org.h2.tools.Server;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
+    static Scanner scanner = new Scanner(System.in);
 
     private static void createTables(Connection conn) throws SQLException {
         Statement stmt = conn.createStatement();
@@ -84,44 +84,46 @@ public class Main {
         System.out.println("[3] - Delete to-do item");
         System.out.println("[4] - List to-do items");
         System.out.println("Enter your menu choice:");
-        return captureNumber();
+        return captureNumber(scanner);
     }
 
-    public static String captureText() {
-        Scanner scanner = new Scanner(System.in);
+    public static String captureText(Scanner scanner) {
         return scanner.nextLine();
     }
 
-    public static int captureNumber(){
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextInt();
+    public static int captureNumber(Scanner scanner){
+        return Integer.parseInt(scanner.nextLine());
+    }
+
+    public static void printList(ArrayList<ToDoItem> list){
+        String checkbox = "[ ] ";
+        System.out.println("\nMy ToDo Items:");
+        for (ToDoItem item : list) {
+            if (item.isDone) {
+                checkbox = "[X] ";
+            }
+            System.out.printf("%s %d. %s\n", checkbox, item.id, item.text);
+        }
+        System.out.println("\n");
     }
 
     public static void processMenuChoice(Connection conn, int input, int userId) throws SQLException {
         switch (input){
             case 1:
                 System.out.println("Enter your to-do item:");
-                insertItem(conn, captureText(), userId);
+                insertItem(conn, captureText(scanner), userId);
                 break;
             case 2:
-                System.out.println("Enter the number of the item you wish to toggle:");
-                updateItem(conn, captureNumber());
+                System.out.println("Enter the number of the item to toggle:");
+                updateItem(conn, captureNumber(scanner));
                 break;
             case 3:
-                System.out.println("Enter the number of the item you wish to delete:");
-                deleteItem(conn, captureNumber());
+                System.out.println("Enter the number of the item to delete:");
+                deleteItem(conn, captureNumber(scanner));
                 break;
             case 4:
                 ArrayList<ToDoItem> list = selectUsersItems(conn, userId);
-                String checkbox = "[ ] ";
-                System.out.println("\nMy ToDo Items:");
-                for (ToDoItem item : list) {
-                    if (item.isDone) {
-                        checkbox = "[X] ";
-                    }
-                    System.out.printf("%s %d. %s\n", checkbox, item.id, item.text);
-                }
-                System.out.println("\n");
+                printList(list);
                 break;
             default:
                 System.out.println("Invalid choice.");
@@ -130,7 +132,7 @@ public class Main {
 
     public static int login(Connection conn) throws SQLException {
         System.out.println("Enter your account name:");
-        String acctName = captureText();
+        String acctName = captureText(scanner);
         User user = selectUser(conn, acctName);
 
         if(user.name==null){
@@ -144,6 +146,7 @@ public class Main {
 
         Server.createWebServer().start();
         Connection conn = DriverManager.getConnection("jdbc:h2:./main");
+
         createTables(conn);
 
         int currentUserId = login(conn);
