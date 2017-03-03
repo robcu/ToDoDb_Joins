@@ -19,24 +19,33 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1034">
-              <caret line="112" column="20" lean-forward="false" selection-start-line="112" selection-start-column="20" selection-end-line="112" selection-end-column="20" />
+            <state relative-caret-position="610">
+              <caret line="155" column="0" lean-forward="true" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#createTables#0;class#Main#0" expanded="false" />
                 <element signature="method#insertItem#0;class#Main#0" expanded="false" />
-                <element signature="method#selectItems#0;class#Main#0" expanded="false" />
+                <element signature="method#selectUsersItems#0;class#Main#0" expanded="false" />
                 <element signature="method#selectItem#0;class#Main#0" expanded="false" />
                 <element signature="method#deleteItem#0;class#Main#0" expanded="false" />
                 <element signature="method#updateItem#0;class#Main#0" expanded="false" />
                 <element signature="method#insertUser#0;class#Main#0" expanded="false" />
-                <marker date="1488561123000" expanded="true" signature="501:545" ph="INSERT INTO todos... " />
-                <marker date="1488561123000" expanded="true" signature="846:901" ph="SELECT * FRO... todos" />
-                <marker date="1488561123000" expanded="true" signature="1505:1579" ph="SELECT * FRO... todos" />
-                <marker date="1488561123000" expanded="true" signature="2344:2395" ph="UPDATE todos... " />
-                <marker date="1488561123000" expanded="true" signature="2600:2634" ph="INSERT INTO users... " />
-                <marker date="1488561123000" expanded="true" signature="2896:2930" ph="SELECT * FRO... users" />
-                <marker date="1488561123000" expanded="true" signature="4556:4643" ph="CREATE TABLE... IF" />
-                <marker date="1488561123000" expanded="true" signature="4670:4748" ph="CREATE TABLE... IF" />
+                <element signature="method#selectUser#0;class#Main#0" expanded="false" />
+                <element signature="method#promptMenu#0;class#Main#0" expanded="false" />
+                <element signature="method#captureText#0;class#Main#0" expanded="false" />
+                <element signature="method#captureNumber#0;class#Main#0" expanded="false" />
+                <element signature="method#processMenuChoice#0;class#Main#0" expanded="false" />
+                <element signature="method#login#0;class#Main#0" expanded="false" />
+                <marker date="1488570529000" expanded="true" signature="271:358" ph="CREATE TABLE... IF" />
+                <marker date="1488570529000" expanded="true" signature="385:445" ph="CREATE TABLE... IF" />
+                <marker date="1488570529000" expanded="true" signature="612:656" ph="INSERT INTO todos... " />
+                <marker date="1488570529000" expanded="true" signature="974:1029" ph="SELECT * FRO... todos" />
+                <marker date="1488570529000" expanded="true" signature="974:1048" ph="SELECT * FRO... todos" />
+                <marker date="1488570529000" expanded="true" signature="1628:1702" ph="SELECT * FRO... todos" />
+                <marker date="1488570529000" expanded="true" signature="2236:2264" ph="DELETE FROM " />
+                <marker date="1488570529000" expanded="true" signature="2465:2516" ph="UPDATE todos... " />
+                <marker date="1488570529000" expanded="true" signature="2721:2755" ph="INSERT INTO users... " />
+                <marker date="1488570529000" expanded="true" signature="2998:3032" ph="SELECT * FRO... users" />
               </folding>
             </state>
           </provider>
@@ -542,6 +551,11 @@
     <list size="1">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
     </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -554,26 +568,27 @@
       <option name="presentableId" value="Default" />
       <updated>1488484325367</updated>
       <workItem from="1488484326886" duration="14533000" />
-      <workItem from="1488560790930" duration="332000" />
+      <workItem from="1488560790930" duration="8237000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14865000" />
+    <option name="totallyTimeSpent" value="22770000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="773" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="773" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -585,7 +600,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38472834" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -602,8 +617,14 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="5" />
+    </breakpoint-manager>
     <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Main.java">
@@ -612,20 +633,29 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#createTables#0;class#Main#0" expanded="false" />
             <element signature="method#insertItem#0;class#Main#0" expanded="false" />
-            <element signature="method#selectItems#0;class#Main#0" expanded="false" />
+            <element signature="method#selectUsersItems#0;class#Main#0" expanded="false" />
             <element signature="method#selectItem#0;class#Main#0" expanded="false" />
             <element signature="method#deleteItem#0;class#Main#0" expanded="false" />
             <element signature="method#updateItem#0;class#Main#0" expanded="false" />
             <element signature="method#insertUser#0;class#Main#0" expanded="false" />
-            <marker date="1488561123000" expanded="true" signature="501:545" ph="INSERT INTO todos... " />
-            <marker date="1488561123000" expanded="true" signature="846:901" ph="SELECT * FRO... todos" />
-            <marker date="1488561123000" expanded="true" signature="1505:1579" ph="SELECT * FRO... todos" />
-            <marker date="1488561123000" expanded="true" signature="2344:2395" ph="UPDATE todos... " />
-            <marker date="1488561123000" expanded="true" signature="2600:2634" ph="INSERT INTO users... " />
-            <marker date="1488561123000" expanded="true" signature="2896:2930" ph="SELECT * FRO... users" />
-            <marker date="1488561123000" expanded="true" signature="4556:4643" ph="CREATE TABLE... IF" />
-            <marker date="1488561123000" expanded="true" signature="4670:4748" ph="CREATE TABLE... IF" />
+            <element signature="method#selectUser#0;class#Main#0" expanded="false" />
+            <element signature="method#promptMenu#0;class#Main#0" expanded="false" />
+            <element signature="method#captureText#0;class#Main#0" expanded="false" />
+            <element signature="method#captureNumber#0;class#Main#0" expanded="false" />
+            <element signature="method#processMenuChoice#0;class#Main#0" expanded="false" />
+            <element signature="method#login#0;class#Main#0" expanded="false" />
+            <marker date="1488570529000" expanded="true" signature="271:358" ph="CREATE TABLE... IF" />
+            <marker date="1488570529000" expanded="true" signature="385:445" ph="CREATE TABLE... IF" />
+            <marker date="1488570529000" expanded="true" signature="612:656" ph="INSERT INTO todos... " />
+            <marker date="1488570529000" expanded="true" signature="974:1029" ph="SELECT * FRO... todos" />
+            <marker date="1488570529000" expanded="true" signature="974:1048" ph="SELECT * FRO... todos" />
+            <marker date="1488570529000" expanded="true" signature="1628:1702" ph="SELECT * FRO... todos" />
+            <marker date="1488570529000" expanded="true" signature="2236:2264" ph="DELETE FROM " />
+            <marker date="1488570529000" expanded="true" signature="2465:2516" ph="UPDATE todos... " />
+            <marker date="1488570529000" expanded="true" signature="2721:2755" ph="INSERT INTO users... " />
+            <marker date="1488570529000" expanded="true" signature="2998:3032" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>
@@ -646,6 +676,8 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/templates/login.html" />
+    <entry file="file://$PROJECT_DIR$/resources/templates/home.html" />
     <entry file="file://$PROJECT_DIR$/src/ToDoItem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -654,8 +686,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/templates/login.html" />
-    <entry file="file://$PROJECT_DIR$/resources/templates/home.html" />
     <entry file="file://$PROJECT_DIR$/src/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -666,24 +696,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1034">
-          <caret line="112" column="20" lean-forward="false" selection-start-line="112" selection-start-column="20" selection-end-line="112" selection-end-column="20" />
+        <state relative-caret-position="610">
+          <caret line="155" column="0" lean-forward="true" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#createTables#0;class#Main#0" expanded="false" />
             <element signature="method#insertItem#0;class#Main#0" expanded="false" />
-            <element signature="method#selectItems#0;class#Main#0" expanded="false" />
+            <element signature="method#selectUsersItems#0;class#Main#0" expanded="false" />
             <element signature="method#selectItem#0;class#Main#0" expanded="false" />
             <element signature="method#deleteItem#0;class#Main#0" expanded="false" />
             <element signature="method#updateItem#0;class#Main#0" expanded="false" />
             <element signature="method#insertUser#0;class#Main#0" expanded="false" />
-            <marker date="1488561123000" expanded="true" signature="501:545" ph="INSERT INTO todos... " />
-            <marker date="1488561123000" expanded="true" signature="846:901" ph="SELECT * FRO... todos" />
-            <marker date="1488561123000" expanded="true" signature="1505:1579" ph="SELECT * FRO... todos" />
-            <marker date="1488561123000" expanded="true" signature="2344:2395" ph="UPDATE todos... " />
-            <marker date="1488561123000" expanded="true" signature="2600:2634" ph="INSERT INTO users... " />
-            <marker date="1488561123000" expanded="true" signature="2896:2930" ph="SELECT * FRO... users" />
-            <marker date="1488561123000" expanded="true" signature="4556:4643" ph="CREATE TABLE... IF" />
-            <marker date="1488561123000" expanded="true" signature="4670:4748" ph="CREATE TABLE... IF" />
+            <element signature="method#selectUser#0;class#Main#0" expanded="false" />
+            <element signature="method#promptMenu#0;class#Main#0" expanded="false" />
+            <element signature="method#captureText#0;class#Main#0" expanded="false" />
+            <element signature="method#captureNumber#0;class#Main#0" expanded="false" />
+            <element signature="method#processMenuChoice#0;class#Main#0" expanded="false" />
+            <element signature="method#login#0;class#Main#0" expanded="false" />
+            <marker date="1488570529000" expanded="true" signature="271:358" ph="CREATE TABLE... IF" />
+            <marker date="1488570529000" expanded="true" signature="385:445" ph="CREATE TABLE... IF" />
+            <marker date="1488570529000" expanded="true" signature="612:656" ph="INSERT INTO todos... " />
+            <marker date="1488570529000" expanded="true" signature="974:1029" ph="SELECT * FRO... todos" />
+            <marker date="1488570529000" expanded="true" signature="974:1048" ph="SELECT * FRO... todos" />
+            <marker date="1488570529000" expanded="true" signature="1628:1702" ph="SELECT * FRO... todos" />
+            <marker date="1488570529000" expanded="true" signature="2236:2264" ph="DELETE FROM " />
+            <marker date="1488570529000" expanded="true" signature="2465:2516" ph="UPDATE todos... " />
+            <marker date="1488570529000" expanded="true" signature="2721:2755" ph="INSERT INTO users... " />
+            <marker date="1488570529000" expanded="true" signature="2998:3032" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>
