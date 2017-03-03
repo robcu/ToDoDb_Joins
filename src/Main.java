@@ -23,8 +23,6 @@ public class Main {
             int id = results.getInt("todos.id");
             String text = results.getString("todos.text");
             boolean isDone = results.getBoolean("todos.is_done");
-            int userId = results.getInt("todos.user");
-
             items.add(new ToDoItem(id, text, isDone, userId));
         }
         return items;
