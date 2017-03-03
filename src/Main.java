@@ -1,13 +1,7 @@
-import com.sun.tools.javac.comp.Todo;
 import org.h2.tools.Server;
-import spark.ModelAndView;
-import spark.Session;
-import spark.Spark;
-import spark.template.mustache.MustacheTemplateEngine;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
@@ -20,9 +14,10 @@ public class Main {
         stmt.execute();
     }
 
-    public static ArrayList<ToDoItem> selectItems(Connection conn) throws SQLException {
+    public static ArrayList<ToDoItem> selectUsersItems(Connection conn, int userId) throws SQLException {
         ArrayList<ToDoItem> items = new ArrayList<>();
-        PreparedStatement stmt = conn.prepareStatement("SELECT * FROM todos JOIN users ON todos.user = users.id;");
+        PreparedStatement stmt = conn.prepareStatement("SELECT * FROM todos JOIN users ON todos.user = users.id WHERE users.id = ?;");
+        stmt.setInt(1, userId);
         ResultSet results = stmt.executeQuery();
         while (results.next()) {
             int id = results.getInt("todos.id");
@@ -51,7 +46,7 @@ public class Main {
 
     public static void deleteItem(Connection conn, int id) throws SQLException {
         PreparedStatement stmt = conn.prepareStatement("DELETE * FROM todos WHERE id=?;");
-        stmt.setInt(1,id);
+        stmt.setInt(1, id);
         stmt.execute();
     }
 
@@ -61,10 +56,9 @@ public class Main {
         stmt.execute();
     }
 
-    public static void insertUser(Connection conn, String name, String password) throws SQLException {
-        PreparedStatement stmt = conn.prepareStatement("INSERT INTO users VALUES (NULL, ?, ?);");
+    public static void insertUser(Connection conn, String name) throws SQLException {
+        PreparedStatement stmt = conn.prepareStatement("INSERT INTO users VALUES (NULL, ?);");
         stmt.setString(1, name);
-        stmt.setString(2, password);
         stmt.execute();
     } //todo: write test
 
@@ -75,11 +69,76 @@ public class Main {
         ResultSet results = stmt.executeQuery();
         if (results.next()) {
             int id = results.getInt("user_id");
-            String password = results.getString("password");
-            user = new User(id, name, password);
+            user = new User(id, name);
         }
         return user;
     } //todo: write test
+
+    public static int promptMenu() {
+        System.out.println("[1] - Create to-do item");
+        System.out.println("[2] - Toggle to-do item");
+        System.out.println("[3] - Delete to-do item");
+        System.out.println("[4] - List to-do items");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter your menu choice:");
+        int menuChoice = scanner.nextInt();
+        return menuChoice;
+    }
+
+    public static String captureText() {
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextLine();
+    }
+
+    public static int captureNumber(){
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextInt();
+    }
+
+    public static void processMenuChoice(Connection conn, int input, int userId) throws SQLException {
+        switch (input){
+            case 1:
+                System.out.println("Enter your to-do item:");
+                String text = captureText();
+                insertItem(conn, text, userId);
+                break;
+            case 2:
+                System.out.println("Enter the number of the item you wish to toggle:");
+                int numberTog = captureNumber();
+                updateItem(conn, numberTog);
+                break;
+            case 3:
+                System.out.println("Enter the number of the item you wish to delete:");
+                int numberDel = captureNumber();
+                deleteItem(conn, numberDel);
+                break;
+            case 4:
+                ArrayList<ToDoItem> list = selectUsersItems(conn, userId);
+                String checkbox = "[ ] ";
+                for (ToDoItem item : list) {
+                    if (item.isDone) {
+                        checkbox = "[X] ";
+                    }
+                    System.out.printf("FORMATTED: %s %d. %s\n", checkbox, item.id, item.text);
+                }
+                break;
+            default:
+                System.out.println("Invalid choice.");
+        }
+    }
+
+    public static int login(Connection conn) throws SQLException {
+        System.out.println("Enter your account name:");
+        String acctName = captureText();
+        User user = selectUser(conn, acctName);
+
+        if(user==null){
+            insertUser(conn, acctName);
+            user = selectUser(conn, acctName);
+        }
+        return user.id;
+    }
+
 
     public static void main(String[] args) throws SQLException {
 
@@ -89,40 +148,11 @@ public class Main {
         stmt.execute("CREATE TABLE IF NOT EXISTS todos (id IDENTITY, text VARCHAR, is_done BOOLEAN, user INT);");
         stmt.execute("CREATE TABLE IF NOT EXISTS users (id IDENTITY, name VARCHAR, password VARCHAR);");
 
+        int currentUserId = login(conn);
 
-        Scanner scanner = new Scanner(System.in);
-
-//todo: make methods to get this info
         while (true) {
-            System.out.println("[1] - Create to-do item");
-            System.out.println("[2] - Toggle to-do item");
-            System.out.println("[3] - List to-do items");
-
-            String option = scanner.nextLine();
-            if (option.equals("1")) {
-                System.out.println("Enter your to-do item:");
-                String text = scanner.nextLine();
-                insertToDo(conn, text, user);
-
-            } else if (option.equals("2")) {
-                System.out.println("Enter the number of the item you wish to toggle:");
-                int itemNumber = Integer.parseInt(scanner.nextLine());
-                toggleToDo(conn, itemNumber);
-
-            } else if (option.equals("3")) {
-                int i = 1;
-                ArrayList<ToDoItem> items = selectToDos(conn);
-                for (ToDoItem item : items) {
-                    String checkbox = "[ ] ";
-                    if (item.isDone) {
-                        checkbox = "[X] ";
-                    }
-                    System.out.printf("FORMATTED: %s %d. %s\n", checkbox, item.id, item.text);
-                    i++;
-                }
-            } else {
-                System.out.println("Invalid option.");
-            }
+            int menuChoice = promptMenu();
+            processMenuChoice(conn, menuChoice, currentUserId);
         }
     }
 }
